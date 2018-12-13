@@ -11,7 +11,12 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-  /* your logic here...*/
+	return arr.filter(item => isFinite(prepareNumber(item))).reduce((acc, curr) => prepareNumber(acc) + prepareNumber(curr) );
+
 };
+
+const prepareNumber = number => {
+	return Number(number.toString().replace(/px/, ''));
+}
 
 export default sumElements;

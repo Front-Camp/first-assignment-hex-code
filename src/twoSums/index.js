@@ -9,7 +9,15 @@
  * twoSums([5, 9, 3], 12); // [9, 3]
  */
 const twoSums = (arr, base) => {
-  /* your logic here...*/
+	let res = [];
+	arr.map((el, index, array) => {
+		array.slice(index, array.length).map(el2 => {
+			if ( el + el2 === base && res.length !== 2 ) {
+				res.push(el, el2);
+			}
+		})
+	})
+	return res;
 };
 
 export default twoSums;

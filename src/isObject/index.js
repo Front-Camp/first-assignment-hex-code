@@ -9,6 +9,7 @@
  */
 const isObject = data => {
   /* your logic here...*/
+  return data instanceof Object && !(data instanceof Array);
 };
 
 export default isObject;
